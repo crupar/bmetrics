@@ -1,0 +1,52 @@
+<p>
+  <strong>Name:</strong>
+  <%= @registered_application.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @registered_application.url %>
+</p>
+
+<div class="container">
+
+
+  <% if @events.count > 0 %>
+    <div class="container">
+      <p>
+        <strong>
+          Events ( #{@events.count} )
+        </strong>
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @event_names_with_counts.each do |event_info| %>
+            <tr>
+              <td>
+                <%= event_info[0] %>
+              </td>
+              <td>
+                <%= event_info[1] %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <% end %>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
+      <%= link_to 'Back', registered_applications_path %>
+    </div>
+  </div>
+</div>

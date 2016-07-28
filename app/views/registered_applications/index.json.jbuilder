@@ -1,0 +1,1 @@
+json.array! @registered_applications, partial: 'registered_applications/registered_application', as: :registered_application

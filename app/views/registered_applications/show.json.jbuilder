@@ -1,0 +1,1 @@
+json.partial! "registered_applications/registered_application", registered_application: @registered_application

@@ -1,0 +1,29 @@
+<%= form_for(@registered_application) do |f| %>
+  <% if @registered_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registered_application.errors.count, "error") %> prohibited this registered_application from being saved:</h2>
+
+      <ul>
+      <% @registered_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :application_name %><br>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  </br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<p><%= link_to "Delete Application", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this entry?' } %></p>
